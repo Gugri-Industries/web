@@ -395,8 +395,13 @@ export default function ConnectPage() {
         {/* FORM + SIDEBAR */}
         <section className="connect-body">
           {/* ── FORM COLUMN ── */}
-          <div ref={formColRef} className="connect-form-col">
-            <div style={{ maxWidth: 500, width: "100%" }}>
+          <div ref={formColRef}
+            // className="connect-form-col"
+            className="connect-side-col"
+          >
+            <div
+            // style={{ maxWidth: 500, width: "100%" }}
+            >
               <div
                 className="f-anim"
                 style={{
@@ -453,10 +458,10 @@ export default function ConnectPage() {
                   opacity: 0,
                 }}
               >
-                Submit your details for a private architectural consultation.
+                Every project begins with understanding your vision.
               </p>
 
-              <form ref={formRef} action={formAction}>
+              <form style={{ display: 'none' }} ref={formRef} action={formAction}>
                 {/* Name + Email */}
                 <div className="form-two-col">
                   <div
@@ -650,8 +655,8 @@ export default function ConnectPage() {
                         "scale(0.985)";
                   }}
                   onMouseUp={(e) =>
-                    ((e.currentTarget as HTMLButtonElement).style.transform =
-                      "scale(1)")
+                  ((e.currentTarget as HTMLButtonElement).style.transform =
+                    "scale(1)")
                   }
                 >
                   {pending ? "Sending..." : "Send Message"}
@@ -663,6 +668,180 @@ export default function ConnectPage() {
                   </span>
                 </button>
               </form>
+
+              <div className="form-two-col" style={{ gap: "1.75rem" }}>
+                <div
+                  className="f-anim"
+                  style={{
+                    background: "#101010",
+                    border: "1px solid rgba(255,255,255,.08)",
+                    borderRadius: "1rem",
+                    padding: "2rem",
+                    opacity: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    minHeight: 290,
+                  }}
+                >
+                  <div>
+                    <span style={fieldLabel}>Direct Consultation</span>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-epilogue), sans-serif",
+                        fontWeight: 600,
+                        fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      Schedule a Discovery Call
+                    </h3>
+                    <p
+                      style={{
+                        color: "rgba(255,255,255,.55)",
+                        lineHeight: 1.8,
+                        marginBottom: "1.75rem",
+                        fontSize: ".95rem",
+                      }}
+                    >
+                      Book a one-on-one consultation to discuss your vision, requirements, budget, and project timeline with our team.
+                    </p>
+                  </div>
+                  <a
+                    href={process.env.NEXT_PUBLIC_CALL_LINK || ""}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      alignSelf: "stretch",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: ".75rem",
+                      width: "100%",
+                      padding: "1.2rem 1.5rem",
+                      borderRadius: ".375rem",
+                      textDecoration: "none",
+                      textTransform: "uppercase",
+                      fontFamily: "var(--font-label)",
+                      fontWeight: 600,
+                      fontSize: ".62rem",
+                      letterSpacing: ".22em",
+                      color: "#000",
+                      background: "#C5A059",
+                      transition: "filter .25s, transform .15s",
+                    }}
+                    onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.filter =
+                      "brightness(1.07)")
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLAnchorElement).style.filter = "none")
+                    }
+                    onMouseDown={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.transform =
+                      "scale(0.99)")
+                    }
+                    onMouseUp={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.transform =
+                      "scale(1)")
+                    }
+                  >
+                    Book a Consultation
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ fontSize: 17 }}
+                    >
+                      arrow_forward
+                    </span>
+                  </a>
+                </div>
+
+                <div
+                  className="f-anim"
+                  style={{
+                    background: "#101010",
+                    border: "1px solid rgba(255,255,255,.08)",
+                    borderRadius: "1rem",
+                    padding: "2rem",
+                    opacity: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    minHeight: 290,
+                  }}
+                >
+                  <div>
+                    <span style={fieldLabel}>Project Inquiry</span>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-epilogue), sans-serif",
+                        fontWeight: 600,
+                        fontSize: "clamp(1.5rem, 2.3vw, 1.9rem)",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      Submit Your Project Details
+                    </h3>
+                    <p
+                      style={{
+                        color: "rgba(255,255,255,.55)",
+                        lineHeight: 1.8,
+                        marginBottom: "1.75rem",
+                        fontSize: ".95rem",
+                      }}
+                    >
+                      Share your project goals, site information, and design aspirations through our detailed inquiry form for a personalized review.
+                    </p>
+                  </div>
+                  <a
+                    href={process.env.NEXT_PUBLIC_FORM_LINK || ""}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      alignSelf: "stretch",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: ".75rem",
+                      width: "100%",
+                      padding: "1.2rem 1.5rem",
+                      borderRadius: ".375rem",
+                      textDecoration: "none",
+                      textTransform: "uppercase",
+                      fontFamily: "var(--font-label)",
+                      fontWeight: 600,
+                      fontSize: ".62rem",
+                      letterSpacing: ".22em",
+                      color: "#000",
+                      background: "#C5A059",
+                      transition: "filter .25s, transform .15s",
+                    }}
+                    onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.filter =
+                      "brightness(1.07)")
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLAnchorElement).style.filter = "none")
+                    }
+                    onMouseDown={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.transform =
+                      "scale(0.99)")
+                    }
+                    onMouseUp={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.transform =
+                      "scale(1)")
+                    }
+                  >
+                    Start Your Inquiry
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ fontSize: 17 }}
+                    >
+                      arrow_forward
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -726,12 +905,12 @@ export default function ConnectPage() {
                         wordBreak: "break-word",
                       }}
                       onMouseEnter={(e) =>
-                        ((e.currentTarget as HTMLAnchorElement).style.color =
-                          "#C5A059")
+                      ((e.currentTarget as HTMLAnchorElement).style.color =
+                        "#C5A059")
                       }
                       onMouseLeave={(e) =>
-                        ((e.currentTarget as HTMLAnchorElement).style.color =
-                          "#fff")
+                      ((e.currentTarget as HTMLAnchorElement).style.color =
+                        "#fff")
                       }
                     >
                       {link.text}
